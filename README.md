@@ -2,6 +2,54 @@
 
 This project contains all the necessary boilerplate to setup a multi-tenant SaaS with Next.js including authentication and RBAC authorization.
 
+## Running the application
+
+### Both
+
+```bash
+$ cd next-saas-rbac/
+$ docker compose up -d
+$ npm run dev
+```
+
+### Back-End
+
+- http://localhost:3333
+
+```bash
+$ cd next-saas-rbac/
+$ docker compose up -d
+
+$ cd apps/api/
+$ npm run dev
+$ npm run db:migrate
+$ npx prisma generate
+$ npm run db:studio
+```
+
+### Swagger
+
+- http://localhost:3333/docs
+
+```
+{
+  "email": "diego@acme.com",
+  "password": "654321"
+}
+{
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwOTQzNDU0Ny04N2IzLTQ3M2YtODA2Yi0wZTkyMTI3YTU0N2EiLCJpYXQiOjE3Njg2ODczNjYsImV4cCI6MTc2OTI5MjE2Nn0.dAy9JEaG9YSAyYA254E7hKJmiL4Cuzr5FLjvlGA3uH8"
+}
+```
+
+### Front-End
+
+- http://localhost:3000
+
+```bash
+$ cd apps/web/
+$ npm run dev
+```
+
 ## Features
 
 ### Authentication
