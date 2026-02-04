@@ -100,6 +100,8 @@ export async function createInvite(app: FastifyInstance) {
           },
         })
 
+        // Enviar e-mail com o link de convite (invite.id na URL)
+
         return reply.status(201).send({
           inviteId: invite.id,
         })
